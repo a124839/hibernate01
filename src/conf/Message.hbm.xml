@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-21 16:06:07 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="bean.Message" table="MESSAGE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="command" type="java.lang.String">
+            <column name="COMMAND" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="CONTENT" />
+        </property>
+        <property name="picture" type="org.hibernate.type.BlobType">
+            <column name="PICTURE" />
+        </property>
+        
+        <component name="user" class="bean.User">
+        	<property name="username" column="UserName"></property>
+        	<property name="sex" column="Sex"></property>
+        	<property name="age" column="Age"></property>
+        </component>
+        
+    </class>
+</hibernate-mapping>
